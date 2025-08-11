@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notaría — Gestión de Casos</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <meta name="description" content="Aplicación local para gestionar casos notariales con documentos e historial.">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="navbar-brand">Notaría — Gestión de Casos</h1>
+      <a class="btn" href="#" id="btn-new">Nuevo caso</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="list-view" class="card">
+      <header class="card-header">
+        <h2>Casos</h2>
+        <input id="search" class="input" placeholder="Buscar por nombre, tipo, email o teléfono"/>
+      </header>
+      <div id="cases"></div>
+      <footer class="card-footer">
+        <small>Los datos se guardan localmente en tu navegador.</small>
+      </footer>
+    </section>
+
+    <section id="detail-view" class="card hidden">
+      <header class="card-header row">
+        <h2 id="case-title">Detalle del caso</h2>
+        <div class="gap">
+          <button class="btn secondary" id="btn-back">Volver</button>
+          <button class="btn danger" id="btn-delete-case">Eliminar caso</button>
+        </div>
+      </header>
+
+      <div class="grid">
+        <div>
+          <h3>Datos</h3>
+          <form id="case-form" class="grid">
+            <label>Nombre
+              <input name="personName" class="input" placeholder="Nombre de la persona" required/>
+            </label>
+            <label>Tipo de caso
+              <input name="caseType" class="input" placeholder="Inmigración / Notarial" />
+            </label>
+            <label>Fecha de nacimiento
+              <input name="dob" type="date" class="input"/>
+            </label>
+            <label>Dirección
+              <input name="address" class="input" placeholder="Dirección"/>
+            </label>
+            <label>Correo
+              <input name="email" class="input" placeholder="correo@dominio.com"/>
+            </label>
+            <label>Teléfono
+              <input name="phone" class="input" placeholder="(305) 000-0000"/>
+            </label>
+            <label>Resumen
+              <textarea name="summary" rows="5" class="input" placeholder="Notas del caso"></textarea>
+            </label>
+            <div class="row gap">
+              <button class="btn" type="submit">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3>Documentos</h3>
+          <div class="row gap">
+            <input type="file" id="file-input" />
+            <button class="btn" id="btn-add-doc">Agregar</button>
+          </div>
+          <div id="docs" class="docs"></div>
+
+          <h3>Historial</h3>
+          <ul id="events" class="events"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+:root{
+  --bg:#0f172a; --bg2:#111827; --panel:#1f2937; --line:#374151; --text:#e5e7eb; --muted:#94a3b8;
+  --primary:#10b981; --danger:#ef4444;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+.navbar{background:var(--bg2);border-bottom:1px solid var(--line)}
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.navbar-brand{margin:0;font-size:18px}
+.btn{background:var(--primary);border:none;color:#052e2b;padding:8px 12px;border-radius:10px;text-decoration:none;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn.danger{background:var(--danger);color:#fff}
+.input{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0b1220;color:var(--text)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-top:16px}
+.card-header,.card-footer{border-bottom:1px solid var(--line);padding:16px}
+.card-footer{border-top:1px solid var(--line);border-bottom:none}
+.hidden{display:none}
+.row{display:flex;align-items:center;justify-content:space-between}
+.grid{display:grid;gap:12px}
+.grid>.grid{grid-template-columns:1fr 1fr}
+.gap{gap:8px}
+#cases .item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+#cases .item:first-child{border-top:none}
+.item .meta{color:var(--muted);font-size:12px}
+.docs{display:grid;gap:8px;margin-top:8px}
+.doc{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:10px;background:#151c2c}
+.doc .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%}
+.doc .actions button{margin-left:6px}
+.events{list-style:none;padding:0;margin:8px 0;display:grid;gap:6px}
+.events li{font-size:13px;color:var(--muted);border-left:2px solid var(--line);padding-left:8px}
+@media (max-width:800px){
+  .grid{grid-template-columns:1fr}
+  .row{flex-wrap:wrap;gap:8px}
+}
